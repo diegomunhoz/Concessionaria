@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="carro" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b1307f53-a1e6-4dca-896f-d327b01c5410">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     *
+FROM
+     `carro` AS carro]]>
+	</queryString>
+	<field name="carro.codigo" class="java.lang.String"/>
+	<field name="carro.marca" class="java.lang.String"/>
+	<field name="carro.modelo" class="java.lang.String"/>
+	<field name="carro.valor" class="java.lang.String"/>
+	<group name="carro.codigo">
+		<groupExpression><![CDATA[$F{carro.codigo}]]></groupExpression>
+		<groupHeader>
+			<band height="13"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="7"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="beffb128-d407-4fe0-8150-9d05c01290ac" style="Title" x="63" y="17" width="416" height="33"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Relatório de Carros Cadastrados]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="5cb11732-f66c-4748-92cd-e5dc6a44a0a4" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="11100433-a2ba-4618-9a9e-ad86997535ab" style="Column header" x="0" y="19" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ab556513-7c25-42c8-aa72-5bd073cc64d1" style="Column header" x="111" y="19" width="176" height="15"/>
+				<textElement/>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="95dd1b18-7c13-4e03-927f-9d658ebdd7cd" style="Column header" x="287" y="19" width="157" height="15"/>
+				<textElement/>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48b84a49-c2de-4543-aecb-04efe672f0b7" style="Column header" x="444" y="19" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<line>
+				<reportElement uuid="3ad29493-f022-4971-8aab-ebd522c26ab4" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="39c89166-716d-4dcc-879d-bcd8f22f5cc4" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{carro.codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a0396713-4937-48c1-a6bb-c0434c8f73df" x="111" y="2" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{carro.marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5de11ac7-962f-40cf-93b2-cf4859463176" x="286" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{carro.modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e2f9d818-a23d-4398-bfcf-17fd775e0716" x="445" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{carro.valor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="99684da9-3621-475c-8e88-79d9b82da661" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="4ea49ed3-8bcf-406d-818d-4eef3d77cd92" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="508a5f6b-1450-4d40-aa42-268ef7aec081" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="9cda37f5-9da2-468f-9a8a-94b0b9643cc1" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
